@@ -1,0 +1,27 @@
+alter table resourcegroup add column unit INT(10) DEFAULT NULL after description
+
+alter table `days` add assessment_id INT(10) UNSIGNED NOT NULL after remark;
+
+ALTER TABLE days ADD CONSTRAINT fk_day_for_assessment_assessment_idx FOREIGN KEY (assessment_id) references `assessments`(id);
+
+insert into domain_settings (current_session_id,domain_id, status) values
+(1,1,"active");
+
+
+insert into 
+
+
+
+alter table `venue` drop column  `accessibilty_to_disables`
+
+ ENUM('no', 'partially', 'fully') NOT NULL
+ 
+ 
+ 
+ insert into venue (name,country_id,state_id,city_id,capacity,accessibility_to_disables,status,domain_id) values
+('SS6 A Class',1,1,1,50,'no','owned',1),
+('LearningMart Center, Abuja',1,1,1,100,'fully','rented',1),
+('LearningMart Center, Ikoyi',1,1,1,100,'fully','leased',1),
+('Continental Hotels, Victoria island',1,1,1,150,'fully','leased',1),
+('Elon House, Ikoyi',1,1,1,200,'fully','rented',1),
+('oriental Hotel, Vistoria Island',1,1,1,200,'fully','leased',1);
